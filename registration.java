@@ -11,8 +11,7 @@ public class Registration implements ActionListener
 
   JTextField tf1,tf2,tf3;
 
-  JPanel jp1;
-  JButton b1,b2;
+  JButton b1,b2,b3,b4;
 
   JRadioButton jb1,jb2,jb3;
 
@@ -47,17 +46,25 @@ public class Registration implements ActionListener
 
     f1.add(jlab1);
 
-    jlab2 = new JLabel("Click Here for Login:,JLabel.CENTER);
+    jlab2 = new JLabel("Click Here for Login:",JLabel.CENTER);
 
     jlab2.setBounds(150,90,120,30);
 
     f1.add(jlab2);
-    jl1 = new JLabel("LOGIN");
-    jp1=new  JPanel("LOGIN");  
-    jp1.setSize(400,400);
-    jp1.add(jl1);
-    jl1.setBounds(50,10,120,30);
-    f1.add(jp1);
+        
+        JPanel panel=new JPanel();  
+        panel.setBounds(40,80,200,200);    
+        panel.setBackground(Color.gray);  
+        b3 = new JButton("Button 1");     
+        b3.setBounds(50,100,80,30);    
+        b3.setBackground(Color.yellow);   
+        b4=new JButton("Button 2");   
+        b4.setBounds(100,100,80,30);    
+        b4.setBackground(Color.green);   
+        panel.add(b3); panel.add(b4);  
+        f1.add(panel);  
+     
+    
     f1.add(jlab1);
 
     //jlab2 = new JLabel("Click Here for Login:",JLabel.CENTER);
