@@ -51,27 +51,29 @@ public class Registration implements ActionListener
     jlab2.setBounds(150,90,120,30);
 
     f1.add(jlab2);
-        
-        JPanel panel=new JPanel();  
-        panel.setBounds(40,80,200,200);    
-        panel.setBackground(Color.gray);  
-        b3 = new JButton("Button 1");     
-        b3.setBounds(50,100,80,30);    
-        b3.setBackground(Color.yellow);   
-        b4=new JButton("Button 2");   
-        b4.setBounds(100,100,80,30);    
-        b4.setBackground(Color.green);   
-        panel.add(b3); panel.add(b4);  
+         JPanel panel=new JPanel();  
+        panel.setBounds(40,80,300,300);    
+        panel.setBackground(Color.blue);  
+        l1 = new JLabel("USERNAME");    
+        l1.setBounds(100,100,120,30);    	
+	  t1=new JTextField(15);
+        //b3.setBackground(Color.yellow);   
+        l2=new JLabel("PASSWORD");   
+        l2.setBounds(200,200,120,30);  
+         t2=new JTextField(15);
+        //b4.setBackground(Color.green);   
+        panel.add(l1);
+        panel.add(t1);
+        panel.add(l2); 
+        panel.add(t2); 
         f1.add(panel);  
-     
-    
     f1.add(jlab1);
 
-    //jlab2 = new JLabel("Click Here for Login:",JLabel.CENTER);
+    jlab2 = new JLabel("Click Here for Login:",JLabel.CENTER);
 
     b1 = new JButton("REGISTER");
 
-    b1.setBounds(150,90,120,30);
+   b1.setBounds(100,300,120,30);
 
     f1.add(b1);
 
