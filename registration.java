@@ -88,19 +88,27 @@ public class Registration implements ActionListener
 
 
 
+//FRAME 2 _LOGIN PAGE
+   JLabel d_name,d_;
+   JTextField tf1,tf2,tf3,t1,t2;
+
     f2 = new JFrame("LOGIN PAGE");
 
     f2.setSize(600,400);
     f2.setLayout(null);
     f2.setVisible(false);
+
     jlab3 = new JLabel("Welcome !!!",JLabel.CENTER);
     jlab3.setBounds(60,60,200,60);
     //tf1 = new JTextField(45);
+    d_name= new JLabel("");
+    d_name.setBounds(60,100,200,60)
 
     f2.add(jlab3);
+    f2.add(d_name);
 
-    f2.add(tf1);
-    jlab4 = new JLabel("Phone no");
+    //f2.add(tf1);
+    //jlab4 = new JLabel("Phone no");
 
     jlab4.setBounds(60,60,220,40);
     tf2 = new JTextField(45);
@@ -157,9 +165,21 @@ public class Registration implements ActionListener
 
       {
         f2.setVisible(true);
-	  
+        userid=t1.getText();
+        /* //FROM DETAILS TABLE?
+	 statfetch ="select * from -table name- where st_id='"+userid+"';";
+        rs = stmt.executeQuery(statfetch);
+        while(rs.next())
+        {
+          //as per details in table
+          String Name=(rs.getString("name"));
+          //..String course=(rs.getInt("phoneno"));
+          //..System.out.println(rs.getString("course"));
+        }
+         d_name.setText(Name);
+	  */
       }
-      else if(s.equals("SIGNUP"))
+else if(s.equals("SIGNUP"))
       {
         name = tf1.getText();
         phoneno = tf2.getText();
