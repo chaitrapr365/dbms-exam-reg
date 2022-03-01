@@ -1,3 +1,5 @@
+// CREATE TABLE COURSE(COURSEID VARCHAR(20) PRIMARY KEY,COURSENAME VARCHAR(50),CREDIT NUMBER(8));
+//
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
