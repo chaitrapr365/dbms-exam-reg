@@ -6,78 +6,79 @@ public class Registration implements ActionListener
 {
   
   JFrame f1,f2,f3;
-
-  JLabel jlab1,jlab2,jlab3,jlab4,jlab5,jlab6;
-
-  JTextField tf1,tf2,tf3;
-
+  JLabel jlab1,jlab2,jlab3,jlab4,jlab5,jlab6,l1,l2;
+  JTextField tf1,tf2,tf3,t1,t2;
+  TextField pass;
   JButton b1,b2,b3,b4;
-
   JRadioButton jb1,jb2,jb3;
-
   ButtonGroup bg;
-
   Connection c;
-
   Statement stmt;
-
   ResultSet rs;
-
   String s,name,phoneno,course,stmt1;
-
   Registration() throws Exception
-
   {
- 
    Class.forName("org.postgresql.Driver");
-
     c = DriverManager.getConnection("jdbc:postgresql://ziggy.db.elephantsql.com:5432/dgmvslal","dgmvslal","Z9rYgKjyec0JM2iKRWfF5GAtmbLM7lBH");
-
     stmt = c.createStatement();
-
 
     f1 = new JFrame("Home Page");
 
     f1.setSize(600,600);
 
     jlab1 = new JLabel("UNIVERSITY");
-
+    JPanel pane=new JPanel(); 
+    //pane.setBackground(Color.black);
+    //pane.setBounds(50,20,500,10); 
     jlab1.setBounds(50,10,120,30);
-
     f1.add(jlab1);
+    //f1.add(pane);
 
     jlab2 = new JLabel("Click Here for Login:",JLabel.CENTER);
 
-    jlab2.setBounds(150,90,120,30);
+    jlab2.setBounds(100,50,120,30);
 
     f1.add(jlab2);
-         JPanel panel=new JPanel();  
-        panel.setBounds(40,80,300,300);    
-        panel.setBackground(Color.blue);  
+        
+        JPanel panel=new JPanel();  
+	 //JPanel pane=new JPanel(); 
+        panel.setBounds(40,80,500,500);    
+        panel.setBackground(Color.blue); 
+        //pane.setBackground(Color.black);
+	 //pane.setBounds(0,80,500,10); 
         l1 = new JLabel("USERNAME");    
         l1.setBounds(100,100,120,30);    	
 	  t1=new JTextField(15);
         //b3.setBackground(Color.yellow);   
         l2=new JLabel("PASSWORD");   
-        l2.setBounds(200,200,120,30);  
-         t2=new JTextField(15);
+        l2.setBounds(200,200,120,15);  
+       pass=new TextField(15);
+	pass.setEchoChar('*');
         //b4.setBackground(Color.green);   
         panel.add(l1);
         panel.add(t1);
         panel.add(l2); 
-        panel.add(t2); 
+        panel.add(pass); 
+        //f1.add(pane);
         f1.add(panel);  
+     
+    
     f1.add(jlab1);
 
     jlab2 = new JLabel("Click Here for Login:",JLabel.CENTER);
 
-    b1 = new JButton("REGISTER");
+     b1=new JButton("LOGIN");
+     b2=new JButton("SIGNUP");
 
-   b1.setBounds(100,300,120,30);
-
-    f1.add(b1);
+    b1.setBounds(100,300,120,30);
+    b2.setBounds(500,300,120,30);
+    panel.add(b1); 
+    panel.add(b2); 
 
     b1.addActionListener(this);
+    b2.addActionListener(this);
+
+    f1.add(panel);  
 
     f1.setLayout(null);
 
@@ -87,14 +88,14 @@ public class Registration implements ActionListener
 
 
 
-    f2 = new JFrame("Registration Page");
+    f2 = new JFrame("LOGIN PAGE");
 
     f2.setSize(600,400);
-    f2.setLayout(new FlowLayout());
+    f2.setLayout(null);
     f2.setVisible(false);
-    jlab3 = new JLabel("Name");
+    jlab3 = new JLabel("Welcome !!!",JLabel.CENTER);
     jlab3.setBounds(60,60,200,60);
-    tf1 = new JTextField(45);
+    //tf1 = new JTextField(45);
 
     f2.add(jlab3);
 
@@ -152,16 +153,13 @@ public class Registration implements ActionListener
     try
     {
  
-     if(s.equals("REGISTER"))
+     if(s.equals("LOGIN"))
 
       {
         f2.setVisible(true);
+	  
       }
-      else if(s.equals("Java") || s.equals("C++") || s.equals("HTML"))
-      {
-        tf3.setText(s);
-      }
-      else if(s.equals("SUBMIT"))
+      else if(s.equals("SIGNUP"))
       {
         name = tf1.getText();
         phoneno = tf2.getText();
