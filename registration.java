@@ -197,7 +197,7 @@ public class Registration implements ActionListener,ItemListener
 	  */
       }
 else if(s.equals("SIGNUP"))
-      {
+      {/*
         name = tf1.getText();
         phoneno = tf2.getText();
         course = tf3.getText();
@@ -216,7 +216,7 @@ else if(s.equals("SIGNUP"))
         f1.dispose();*/
       }
    }
-   catch(SQLException e)
+  catch(Exception e)
 
    {
   
@@ -226,21 +226,20 @@ else if(s.equals("SIGNUP"))
     }
     public void itemStateChanged(ItemEvent ie)
   {
-
-    s= ie.getStateChanged();
+/*
+    //s=ie.getStateChange();
  
     try
     {
       //for checkbox events
       }
-   }
    catch(SQLException e)
 
    {
   
    e.printStackTrace();
       }
- 
+ */
     }
  public static void main(String args[]) throws Exception
  {
