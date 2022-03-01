@@ -6,8 +6,8 @@ public class Registration implements ActionListener
 {
   
   JFrame f1,f2,f3;
-  JLabel jlab1,jlab2,jlab3,jlab4,jlab5,jlab6,l1,l2;
-  JTextField tf1,tf2,tf3,t1,t2;
+  JLabel jlab1,jlab2,jlab3,jlab4,jlab5,jlab6,jlab7,jlab8,l1,l2;
+  JTextField tf1,tf2,tf3,tf5,tf6,tf7,t1,t2;
   TextField pass;
   JButton b1,b2,b3,b4;
   JRadioButton jb1,jb2,jb3;
@@ -15,7 +15,7 @@ public class Registration implements ActionListener
   Connection c;
   Statement stmt;
   ResultSet rs;
-  String s,name,phoneno,course,stmt1;
+  String s,name,studid,courseid,semester,year,course,stmt1;
   Registration() throws Exception
   {
    Class.forName("org.postgresql.Driver");
@@ -40,35 +40,34 @@ public class Registration implements ActionListener
 
     f1.add(jlab2);
         
-        JPanel panel=new JPanel();  
+    JPanel panel=new JPanel();  
 	 //JPanel pane=new JPanel(); 
-        panel.setBounds(40,80,500,500);    
-        panel.setBackground(Color.blue); 
+     panel.setBounds(40,80,500,500);    
+     panel.setBackground(Color.blue); 
         //pane.setBackground(Color.black);
 	 //pane.setBounds(0,80,500,10); 
-        l1 = new JLabel("USERNAME");    
-        l1.setBounds(100,100,120,30);    	
-	  t1=new JTextField(15);
+     l1 = new JLabel("USERNAME");    
+     l1.setBounds(100,100,120,30);    	
+     t1=new JTextField(15);
         //b3.setBackground(Color.yellow);   
-        l2=new JLabel("PASSWORD");   
-        l2.setBounds(200,200,120,15);  
-       pass=new TextField(15);
-	pass.setEchoChar('*');
+     l2=new JLabel("PASSWORD");   
+     l2.setBounds(200,200,120,15);  
+     pass=new TextField(15);
+     pass.setEchoChar('*');
         //b4.setBackground(Color.green);   
-        panel.add(l1);
-        panel.add(t1);
-        panel.add(l2); 
-        panel.add(pass); 
+     panel.add(l1);
+     panel.add(t1);
+     panel.add(l2); 
+     panel.add(pass); 
         //f1.add(pane);
-        f1.add(panel);  
+     f1.add(panel);  
      
-    
-    f1.add(jlab1);
+     f1.add(jlab1);
 
-    jlab2 = new JLabel("Click Here for Login:",JLabel.CENTER);
+     jlab2 = new JLabel("Click Here for Login:",JLabel.CENTER);
 
-     b1=new JButton("LOGIN");
-     b2=new JButton("SIGNUP");
+     b1=new JButton("SIGNUP");
+     b2=new JButton("LOGIN");
 
     b1.setBounds(100,300,120,30);
     b2.setBounds(500,300,120,30);
@@ -81,6 +80,7 @@ public class Registration implements ActionListener
     f1.add(panel);  
 
     f1.setLayout(null);
+    
 
     f1.setVisible(true);
 
@@ -98,17 +98,17 @@ public class Registration implements ActionListener
     f2.setLayout(null);
     f2.setVisible(false);
 
-    jlab3 = new JLabel("Welcome !!!",JLabel.CENTER);
+    jlab3 = new JLabel("Welcome to registration!",JLabel.CENTER);
     jlab3.setBounds(60,60,200,60);
-    //tf1 = new JTextField(45);
+    
     d_name= new JLabel("");
     d_name.setBounds(60,100,200,60)
-
+    tf1 = new JTextField(45);
     f2.add(jlab3);
     f2.add(d_name);
 
-    //f2.add(tf1);
-    //jlab4 = new JLabel("Phone no");
+    f2.add(tf1);
+    jlab4 = new JLabel("studid");
 
     jlab4.setBounds(60,60,220,40);
     tf2 = new JTextField(45);
@@ -118,6 +118,20 @@ public class Registration implements ActionListener
     jlab5 = new JLabel("Course");
     jlab5.setBounds(60,60,240,30);
     f2.add(jlab5);
+    tf4=new JTextField(45);
+    f2.add(tf4);
+    jlab6 = new JLabel("Courseid");
+    f2.add(jlab6);
+    tf5=new JTextField(45);
+    f2.add(tf5);
+    jlab7 = new JLabel("Semester");
+    f2.add(jlab7);
+    tf6=new JTextField(45);
+    f2.add(tf6);
+    jlab8 = new JLabel("Year");
+    f2.add(jlab8);
+    tf7=new JTextField(45);
+    f2.add(tf7);
     jb1 = new JRadioButton("Java");
     jb2 = new JRadioButton("C++");
     jb3 = new JRadioButton("HTML");
