@@ -1,15 +1,16 @@
 // CREATE TABLE COURSE(COURSEID VARCHAR(20) PRIMARY KEY,COURSENAME VARCHAR(50),CREDIT NUMBER(8));
 //CREATE TABLE CANDIDATE(STUDID VARCHAR(10) PRIMARY KEY,NAME VARCHAR(40),SEMESTER VARCHAR(10),COURSEID VARCHAR(20) REFERENCES COURSE,COLLEGE VARCHAR(70),PASSWORD VARCHAR(30));
+//CREATE TABLE EXAMDETAIL(STUDID VARCHAR(10) REFERENCES CANDIDATE,CENTRENAME VARCHAR(50),TIME VARCHAR(20));
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 import java.sql.*;
-public class Registration implements ActionListener
+public class Registration implements ActionListener,ItemListener
 {
   
   JFrame f1,f2,f3;
   JLabel jlab1,jlab2,jlab3,jlab4,jlab5,jlab6,jlab7,jlab8,l1,l2;
-  JTextField tf1,tf2,tf3,tf5,tf6,tf7,t1,t2;
+  JTextField tf1,tf2,tf3,tf4,tf5,tf6,tf7,t1,t2;
   TextField pass;
   JButton b1,b2,b3,b4;
   JRadioButton jb1,jb2,jb3;
@@ -92,7 +93,7 @@ public class Registration implements ActionListener
 
 //FRAME 2 _LOGIN PAGE
    JLabel d_name,d_;
-   JTextField tf1,tf2,tf3,t1,t2;
+   //JTextField tf1,tf2,tf3,t1,t2;
 
     f2 = new JFrame("LOGIN PAGE");
 
@@ -104,7 +105,7 @@ public class Registration implements ActionListener
     jlab3.setBounds(60,60,200,60);
     
     d_name= new JLabel("");
-    d_name.setBounds(60,100,200,60)
+    d_name.setBounds(60,100,200,60);
     tf1 = new JTextField(45);
     f2.add(jlab3);
     f2.add(d_name);
@@ -181,7 +182,7 @@ public class Registration implements ActionListener
 
       {
         f2.setVisible(true);
-        userid=t1.getText();
+        String userid=t1.getText();
         /* //FROM DETAILS TABLE?
 	 statfetch ="select * from -table name- where st_id='"+userid+"';";
         rs = stmt.executeQuery(statfetch);
@@ -212,7 +213,25 @@ else if(s.equals("SIGNUP"))
         }
         JOptionPane.showMessageDialog(f2,"Successfully Registered.","Alert",JOptionPane.WARNING_MESSAGE);
         f2.dispose();
-        f1.dispose();
+        f1.dispose();*/
+      }
+   }
+   catch(SQLException e)
+
+   {
+  
+   e.printStackTrace();
+      }
+ 
+    }
+    public void itemStateChanged(ItemEvent ie)
+  {
+
+    s= ie.getStateChanged();
+ 
+    try
+    {
+      //for checkbox events
       }
    }
    catch(SQLException e)
