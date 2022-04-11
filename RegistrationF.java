@@ -90,10 +90,10 @@ public class RegistrationF implements ActionListener
         		creditLabel.setBounds(20,220,100,70);
         passwordLabel.setBounds(20,140,140,70);
         confirmpasswordLabel.setBounds(20,180,140,70);
-        centrenameLabel.setBounds(20,340,100,70);
-        collegeLabel.setBounds(20,220,100,70);
-        semesterLabel.setBounds(20,420,100,70);
-        	timeLabel.setBounds(20,460,100,70);
+        centrenameLabel.setBounds(20,220,100,70);
+        collegeLabel.setBounds(20,260,100,70);
+        semesterLabel.setBounds(20,300,100,70);
+        	timeLabel.setBounds(20,260,100,70);
         studidTextField.setBounds(180,33,165,23);
         nameTextField.setBounds(180,73,165,23);
         genderComboBox.setBounds(180,113,165,23);
@@ -103,9 +103,9 @@ public class RegistrationF implements ActionListener
         passwordField.setBounds(180,153,165,23);
         confirmPasswordField.setBounds(180,193,165,23);
         collegeTextField.setBounds(180,233,165,23);
-        semesterComboBox.setBounds(180,393,165,23);
-        centrenameTextField.setBounds(180,433,165,23);
-        	timeComboBox.setBounds(180,473,165,23);
+        semesterComboBox.setBounds(180,273,165,23);
+        centrenameTextField.setBounds(180,313,165,23);
+        	timeComboBox.setBounds(180,273,165,23);
         proceedButton.setBounds(70,540,100,35);
         enterButton.setBounds(120,270,100,70);
         resetButton.setBounds(220,540,100,35);
